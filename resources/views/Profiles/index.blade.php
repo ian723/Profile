@@ -8,15 +8,18 @@
 
     </div>
     <div class="col-9 pt-5">
-        <div><h1>Alpha</h1></div>
+        <div class="d-flex justify-content-between align-items-baseline">
+            <h1>{{ $user->username }}</h1>
+            <a href="#">Add New Post</a>
+        </div>
         <div class="d-flex gap-4">
             <div><strong>153</strong> post</div>
             <div><strong>23k</strong> followers</div>
             <div><strong>212</strong>following</div>
         </div>
-        <div class="pt-4" style="font-weight: bold;"> AlphaCode.org</div>
-        <div>We're a global community learning to code together.</div>
-        <div><a href="#">www.alphacode.org</a></div>
+        <div class="pt-4" style="font-weight: bold;">{{ $user->profile->title }}</div>
+        <div>{{ $user->profile->description }}</div>
+        <div><a href="#">{{ $user->profile->url }}</a></div>
 
     </div>
  </div>
