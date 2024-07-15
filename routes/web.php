@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FollowsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('follow/{user}', [FollowsController::class, 'store']);
 
 Route::get('/p/create', [PostsController::class, 'create']);
 Route::get('/p/{post}', [PostsController::class, 'show']);
